@@ -1,38 +1,35 @@
 <template>
-  <div>
-    <div style="display: flex; justify-content: center">
-      <div style="width: 500px">
-        <h4
-          style="font-family: monospace; font-size: 1.5rem; text-align: center"
-        >
-          <a
-            href="https://docs.docker.com/engine/reference/commandline/run"
-            target="_blank"
-            class="hover"
-            style="color: #0df; text-decoration: none"
-            >docker run</a
-          >
-          command generator
-        </h4>
-        <command-generator style="margin-bottom: 40px" />
-      </div>
-    </div>
-    <div class="footer" style="text-align: center">
+  <header>
+    <h4 class="title">
       <a
-        href="https://github.com/marvin-j97"
+        href="https://docs.docker.com/engine/reference/commandline/run"
         target="_blank"
         class="hover"
-        style="
-          text-decoration: none;
-          color: #0df;
-          font-family: monospace;
-          font-size: 1.1rem;
-          font-weight: bold;
-        "
-        >Star on GitHub</a
+        >docker run</a
       >
+      command generator
+    </h4>
+  </header>
+  <main>
+    <div style="width: 550px">
+      <command-generator style="margin-bottom: 40px" />
     </div>
-  </div>
+  </main>
+  <footer>
+    <div>
+      <a
+        href="https://github.com/marvin-j97/docker-command-generator"
+        target="_blank"
+        class="hover"
+      >
+        GitHub
+      </a>
+    </div>
+    <div style="margin-left: 10px; margin-right: 10px; opacity: 0.5">|</div>
+    <div>
+      <a href="#" target="_blank" class="hover">DONATE</a>
+    </div>
+  </footer>
 </template>
 
 <script lang="ts">
@@ -52,12 +49,27 @@ export default defineComponent({
   box-sizing: border-box;
 }
 
+main {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  font-family: monospace;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: #0df;
+  font-family: monospace;
+  font-weight: bold;
+}
+
 .hover {
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
-  transition: filter 0.125s ease-in-out;
-  fill: #fafafa;
+  transition: filter 0.1s ease-in-out;
 }
 
 .hover:hover {
@@ -70,8 +82,16 @@ body {
   margin: 0;
 }
 
-.footer {
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 20px;
   background: #222224;
+  text-align: center;
+}
+
+footer > a {
+  font-size: 1.1rem;
 }
 </style>
