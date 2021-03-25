@@ -1,5 +1,5 @@
 {
-  "name": "docker-run-command-generator",
+  "name": "docker-run-generator",
   "version": "1.0.0",
   "author": {
     "name": "marvin-j97"
