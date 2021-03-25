@@ -44,11 +44,7 @@ export default defineComponent({
     CommandGenerator,
     Notification,
   },
-  setup() {
-    return {
-      onclick: () => alert("hello"),
-    };
-  },
+  setup() {},
 });
 </script>
 
