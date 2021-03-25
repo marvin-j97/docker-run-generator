@@ -1,21 +1,30 @@
 <template>
-  <button
-    class="button hover"
-    :style="{ 'background-color': color || '#505050' }"
-  >
+  <button class="button hover" :style="style">
     <slot />
   </button>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { computed, ComputedRef, defineComponent, toRefs } from "vue";
 
 export default defineComponent({
   props: {
     color: {
       required: false,
       type: String,
+      default: "#505050",
     },
+  },
+  setup(props) {
+    const { color } = toRefs(props);
+
+    const style: ComputedRef<any> = computed(() => ({
+      "background-color": color.value,
+    }));
+
+    return {
+      style,
+    };
   },
 });
 </script>
@@ -29,6 +38,6 @@ export default defineComponent({
   font-size: 1rem;
   font-family: monospace;
   border-radius: 4px;
-  min-width: 50px;
+  min-width: 60px;
 }
 </style>
