@@ -50,7 +50,7 @@ export function useGenerator() {
       console.log("Loaded state from URL", state);
     } catch (error) {
       console.warn("Could not load initial state");
-      window.history.replaceState({}, document.title, "/");
+      window.history.replaceState({}, document.title, ".");
     }
   }
 

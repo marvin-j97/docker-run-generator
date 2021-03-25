@@ -4,11 +4,11 @@
     class="code-block"
     style="display: flex; align-items: center; margin-bottom: 10px"
   >
-    <div class="hover" @click="copyCommand">
+    <div class="hover" @click="() => copyCommand()">
       {{ hasError ? "Could not generate output: invalid inputs" : command }}
     </div>
     <div style="flex-grow: 1"></div>
-    <div style="margin-left: 10px; height: 24px" @click="copyCommand">
+    <div style="margin-left: 10px; height: 24px" @click="() => copyCommand()">
       <svg
         class="icon hover"
         viewBox="0 0 20 20"
@@ -20,7 +20,7 @@
         <path d="M5 3a2 2 0 00-2 2v6a2 2 0 002 2V5h8a2 2 0 00-2-2H5z"></path>
       </svg>
     </div>
-    <div style="margin-left: 10px; height: 24px" @click="copyShareLink">
+    <div style="margin-left: 10px; height: 24px" @click="() => copyShareLink()">
       <svg
         class="icon hover"
         viewBox="0 0 20 20"
@@ -41,10 +41,22 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   props: {
-    command: String,
-    hasError: Boolean,
-    copyCommand: Function,
-    copyShareLink: Function,
+    command: {
+      type: String,
+      required: true,
+    },
+    hasError: {
+      type: Boolean,
+      required: true,
+    },
+    copyCommand: {
+      type: Function,
+      required: true,
+    },
+    copyShareLink: {
+      type: Function,
+      required: true,
+    },
   },
   setup() {},
 });
