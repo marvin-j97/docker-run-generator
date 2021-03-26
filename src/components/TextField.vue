@@ -62,7 +62,8 @@ export default defineComponent({
       emit("update:modelValue", value);
     }
 
-    function updateByEvent(event: KeyboardEvent) {
+    function updateByEvent(ev: any) {
+      const event = <KeyboardEvent>ev;
       update((<HTMLInputElement>event.target).value);
     }
 
