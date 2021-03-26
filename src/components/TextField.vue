@@ -62,9 +62,8 @@ export default defineComponent({
       emit("update:modelValue", value);
     }
 
-    function updateByEvent(event: Event) {
-      // @ts-ignore
-      update(event.target.value);
+    function updateByEvent(event: KeyboardEvent) {
+      update((<HTMLInputElement>event.target).value);
     }
 
     watch(modelValue, (value) => (innerValue.value = value));
