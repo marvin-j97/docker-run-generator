@@ -25,10 +25,10 @@
         GitHub
       </a>
     </div>
-    <!-- <div style="margin-left: 10px; margin-right: 10px; opacity: 0.5">|</div>
+    <div style="margin-left: 10px; margin-right: 10px; opacity: 0.5">|</div>
     <div>
-      <a href="#" target="_blank" class="hover">Donate</a>
-    </div> -->
+      <a href="https://www.buymeacoffee.com/marvin.j97" target="_blank" class="hover">Donate</a>
+    </div>
   </footer>
   <notification />
 </template>
