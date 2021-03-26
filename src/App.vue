@@ -7,7 +7,7 @@
         class="hover"
         >docker run</a
       >
-      command generator
+      generator
     </div>
     <div style="display: flex; justify-content: center">
       <div>
